@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <JokeButton/>
+      <JokeButton/>
+      <div v-if="joke">
+        <h1>{{joke}}</h1>
+        <button @click="clearJoke">Clear</button>
+      </div>
   </div>
 </template>
 
@@ -14,12 +18,15 @@ export default {
   },
   data() {
     return {
-      jokes: []
+      joke: null
     }
   },
   methods: {
     displayJoke(joke) {
-      this.jokes.push(joke)
+      this.joke = joke;
+    },
+    clearJoke(){
+      this.joke = null;
     }
   },
   mounted () {
