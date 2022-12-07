@@ -1,11 +1,7 @@
 <template>
     <div>
         <div>
-            <!-- button to get joke 1 at a time on click  -->
             <button @click="displayJoke">Get Joke!</button>
-            <!-- <div class="myDiv" v-for="(jokes,index) in jokes" :key="index">
-                {{jokes}}
-            </div> -->
         </div>
     </div>
 </template>

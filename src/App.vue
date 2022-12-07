@@ -1,37 +1,53 @@
 <template>
   <div id="app">
+
       <JokeButton/>
-      <div v-if="joke">
+
+      <!-- <div v-if="joke">
         <h1>{{joke}}</h1>
         <button @click="clearJoke">Clear</button>
-      </div>
+      </div> -->
+
+      <LoudJoke/>
+
+      <SnakeJoke/>
+
+      <NormalJoke/>
+
+      <!-- <button @click="clearJoke">Clear</button> -->
   </div>
 </template>
 
 <script>
 import JokeButton from '@/components/JokeButton.vue';
+import LoudJoke from '@/components/LoudJoke.vue';
+import SnakeJoke from '@/components/SnakeJoke.vue';
+import NormalJoke from '@/components/NormalJoke.vue';
 
 export default {
   name: 'App',
   components: {
     JokeButton,
+    LoudJoke,
+    SnakeJoke,
+    NormalJoke
   },
   data() {
     return {
-      joke: null
+      joke: null,
     }
   },
   methods: {
-    displayJoke(joke) {
-      this.joke = joke;
-    },
-    clearJoke(){
-      this.joke = null;
-    }
+    // displayJoke(joke) {
+    //   this.joke = joke;
+    // },
+    // clearJoke(){
+    //   this.joke = null;
+    // },
   },
-  mounted () {
-    this.$root.$on(`displayJoke`, this.displayJoke);
-  },
+  // mounted () {
+  //   this.$root.$on(`displayJoke`, this.displayJoke);
+  // },
 }
 </script>
 
