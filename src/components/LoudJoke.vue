@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button @click="makeLoud">Make LOUD!</button>
-        <h1>{{loudJoke.toUpperCase()}}</h1>
+        <!-- display H1 with variable we grabbed from JokeButton component via $emit -->
+        <h2>{{loudJoke}}</h2>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
         name: "LoudJoke",
         data() {
             return {
-                loudJoke: null
+                loudJoke: ""
             }
         },
         methods: {
@@ -19,7 +19,7 @@
             }
         },
         mounted () {
-            this.$root.$on(`displayJoke`, this.makeLoud);
+            this.$root.$on(`displayLoudJoke`, this.makeLoud);
         },
     }
 </script>

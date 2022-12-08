@@ -1,9 +1,7 @@
 <template>
     <div>
-        <div>
-            <button @click="displayNormalJoke">Normal Joke!</button>
-            <h1>{{normalJoke}}</h1>
-        </div>
+        <!-- display H1 with variable we grabbed from JokeButton component via $emit -->
+        <h2>{{normalJoke}}</h2>
     </div>
 </template>
 
@@ -21,7 +19,7 @@
             },
         },
         mounted () {
-            this.$root.$on(`displayJoke`, this.displayNormalJoke);
+            this.$root.$on(`displayNormalJoke`, this.displayNormalJoke);
         },
     }
 </script>

@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-      <!-- JokeButton at top -->
+
       <JokeButton/>
 
       <NormalJoke/>
-      <!-- <div v-if="joke">
-        <h1>{{joke}}</h1>
-        <button @click="clearJoke">Clear</button>
-      </div> -->
 
       <LoudJoke/>
 
       <SnakeJoke/>
-      <!-- <button @click="clearJoke">Clear</button> -->
+
   </div>
 </template>
 
@@ -30,26 +26,13 @@ export default {
     SnakeJoke,
     NormalJoke
   },
-  data() {
-    return {
-      joke: null,
-    }
-  },
-  methods: {
-    // displayJoke(joke) {
-    //   this.joke = joke;
-    // },
-    // clearJoke(){
-    //   this.joke = null;
-    // },
-  },
-  // mounted () {
-  //   this.$root.$on(`displayJoke`, this.displayJoke);
-  // },
 }
 </script>
 
 <style>
+html{
+  background-color: lavender;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

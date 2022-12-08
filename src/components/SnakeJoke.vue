@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button @click="makeSnake">Make Snake!</button>
-        <h1>{{snakeJoke.replaceAll('','_')}}</h1>
+        <!-- display H1 with variable we grabbed from JokeButton component via $emit -->
+        <h2>{{snakeJoke}}</h2>
     </div>
 </template>
 
@@ -14,12 +14,12 @@
             }
         },
         methods: {
-            makeSnake(snakeJoke) {
+            getSnakeJoke(snakeJoke) {
                 this.snakeJoke = snakeJoke;
             }
         },
         mounted () {
-            this.$root.$on(`displayJoke`, this.makeSnake);
+            this.$root.$on(`displaySnakeJoke`, this.getSnakeJoke);
         },
     }
 </script>
@@ -27,11 +27,3 @@
 <style scoped>
 
 </style>
-
-<!-- replacement as response to emit -->
-
-<!-- event handler converts to snake -->
-<!-- on snake case side, set listener on mounted -->
-<!-- function handler will only happen when joke is rec'd -->
-<!-- then display result -->
-<!-- on click, make another emit that communicates another version of joke to container that displays it -->
