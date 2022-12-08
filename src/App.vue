@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-
+      <!-- JokeButton at top -->
       <JokeButton/>
 
+      <NormalJoke/>
       <!-- <div v-if="joke">
         <h1>{{joke}}</h1>
         <button @click="clearJoke">Clear</button>
@@ -11,9 +12,6 @@
       <LoudJoke/>
 
       <SnakeJoke/>
-
-      <NormalJoke/>
-
       <!-- <button @click="clearJoke">Clear</button> -->
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
     <div>
         <div>
-            <!-- <button @click="displayJoke">Get Joke!</button> -->
-            <!-- <h1>{{joke}}</h1> -->
+            <button @click="displayNormalJoke">Normal Joke!</button>
+            <h1>{{normalJoke}}</h1>
         </div>
     </div>
 </template>
@@ -12,16 +12,16 @@
         name: "NormalJoke",
         data() {
             return {
-                joke: null
+                normalJoke: ""
             }
         },
         methods: {
-            displayJoke(joke) {
-                this.joke = joke;
+            displayNormalJoke(joke) {
+                this.normalJoke = joke;
             },
         },
         mounted () {
-            this.$root.$on(`displayJoke`, this.joke);
+            this.$root.$on(`displayJoke`, this.displayNormalJoke);
         },
     }
 </script>

@@ -1,7 +1,8 @@
 <template>
     <div>
         <div>
-            <button @click="displayJoke">Get Joke!</button>
+            <!-- This button SHOULD get a Joke using the 'getJoke' method which holds API -->
+            <button @click="getJoke">Get Joke!</button>
         </div>
     </div>
 </template>
@@ -13,23 +14,24 @@ import axios from 'axios';
         name: "JokeButton",
         data() {
             return {
-                joke: null
+                joke: ""
             }
         },
         methods: {
-            displayJoke() {
-                this.$root.$emit(`displayJoke`, this.joke);
-            },
-        },
-        mounted () {
-            axios.request({
+            // getJoke triggered by @click on button above
+            getJoke(){
+                axios.request({
                 url: "https://geek-jokes.sameerkumar.website/api?format=json",
                 method: "GET"
             }).then((response)=>{
+                // I want THIS.joke(my key value in return-data) to become response.data.joke (taken from API call)
                 this.joke = response.data.joke;
+                // then I want to EMIT the name 'displayJoke', arg= this.joke
+                this.$root.$emit(`displayJoke`, this.joke);
             }).catch((error)=>{
                 console.log(error);
             });
+            }
         },
     }
 </script>

@@ -10,7 +10,7 @@
         name: "SnakeJoke",
         data() {
             return {
-                snakeJoke: null
+                snakeJoke: ""
             }
         },
         methods: {
@@ -24,6 +24,14 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
+
+<!-- replacement as response to emit -->
+
+<!-- event handler converts to snake -->
+<!-- on snake case side, set listener on mounted -->
+<!-- function handler will only happen when joke is rec'd -->
+<!-- then display result -->
+<!-- on click, make another emit that communicates another version of joke to container that displays it -->
